@@ -1,0 +1,76 @@
+# Girish Sastry
+# Linear Regression and k-NN for zipcode data
+# Exercise 2.8, Elements of Statistical Learning
+
+# Read in data into R objects
+train.2 <- read.table ("train.2", sep=",")
+train.3 <- read.table ("train.3", sep=",")
+train <- rbind (train.2, train.3)
+test <- read.table ("zip.test")
+
+# y.train is output vector for training data
+y.train <- c (rep (2, nrow (train.2)), rep (3, nrow (train.3)))
+
+test.2 <- test[test[,1] == 2,]
+test.3 <- test[test[,1] == 3,]
+
+test <- rbind (test.2, test.3)
+
+# y.test is output vector for test data
+y.test <- test[,1]   
+
+test <- test[,2:(ncol (test))]
+colnames (test) <- colnames (train)
+
+# Least Squares
+lm1 <- lm (y.train ~ ., data=train)
+summary (lm1)
+# now run the model on our inputs
+y.hat.train <- lm1 $ fitted 
+
+# categorizing model with 2.5 as the separator
+i_3 <- (y.hat.train >= 2.5)
+i_2 <- (y.hat.train < 2.5)
+y.hat.train[i_3] <- 3         # round up
+y.hat.train[i_2] <- 2		# round down
+
+# error in training:
+cat("Linear Regression training error:", mean((y.hat.train-y.train)^2),"\n")
+
+# error in test:
+y.hat.test <- predict.lm (lm1, test)
+
+# categorizing model with 2.5 as the separator
+i_3 <- (y.hat.test >= 2.5)
+i_2 <- (y.hat.test < 2.5)
+y.hat.test[i_3] <- 3
+y.hat.test[i_2] <- 2
+
+cat("Linear Regression test error:", mean((y.hat.test-y.test)^2),"\n")
+                                                                                                                                                                                                                                                                                                                                                                                                   
+# K-Nearest Neighbors
+library (class)
+y.hat.1.train <- knn (train, train, y.train, k=1)
+cat("1-nearest neighbor training error:", mean((as.numeric(y.hat.1.train)-as.numeric(as.factor(y.train)))^2),"\n")
+y.hat.1.test <- knn (train, test, y.train, k=1)
+cat("1-nearest neighbor training error:", mean((as.numeric(y.hat.1.test)-as.numeric(as.factor(y.test)))^2),"\n")
+# 3-NN
+y.hat.3.train <- knn (train, train, y.train, k=3)
+cat("3-nearest neighbor training error:", mean((as.numeric(y.hat.3.train)-as.numeric(as.factor(y.train)))^2),"\n")
+y.hat.3.test <- knn (train, test, y.train, k=3)
+cat("3-nearest neighbor training error:", mean((as.numeric(y.hat.3.test)-as.numeric(as.factor(y.test)))^2),"\n")
+# 5-NN
+y.hat.5.train <- knn (train, train, y.train, k=5)
+cat("5-nearest neighbor training error:", mean((as.numeric(y.hat.5.train)-as.numeric(as.factor(y.train)))^2),"\n")
+y.hat.5.test <- knn (train, test, y.train, k=5)
+cat("5-nearest neighbor training error:", mean((as.numeric(y.hat.5.test)-as.numeric(as.factor(y.test)))^2),"\n")
+# 7-NN
+y.hat.7.train <- knn (train, train, y.train, k=7)
+cat("7-nearest neighbor training error:", mean((as.numeric(y.hat.7.train)-as.numeric(as.factor(y.train)))^2),"\n")
+y.hat.7.test <- knn (train, test, y.train, k=7)
+cat("7-nearest neighbor training error:", mean((as.numeric(y.hat.7.test)-as.numeric(as.factor(y.test)))^2),"\n")
+# 15-NN
+y.hat.15.train <- knn (train, train, y.train, k=15)
+cat("15-nearest neighbor training error:", mean((as.numeric(y.hat.15.train)-as.numeric(as.factor(y.train)))^2),"\n")
+y.hat.15.test <- knn (train, test, y.train, k=15)
+cat("15-nearest neighbor training error:", mean((as.numeric(y.hat.15.test)-as.numeric(as.factor(y.test)))^2),"\n")

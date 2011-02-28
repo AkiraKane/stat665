@@ -60,7 +60,7 @@ Next, we carry out a ridge regression procedure using 10-fold cross validation t
   $\lambda \in \{0,0.1,0.2,...,200\}$. Ridge regression suggests an optimal $\lambda=51$ (see figure 2). With ridge regression, we obtain a MSE of 0.1227, which
   is essentially the same as the error from backwise step selection.
 
-All three procedures of stepwise selection, lasso, and ridge regression give decent results with MSE all < 0.2. Even a simple linear model on all parameters gives
+All three procedures of stepwise selection, lasso, and ridge regression give results with MSE all $< 0.2$. Even a simple linear model on all parameters gives
 a mean square error of 0.125. However, these methods of subset selection did give minor reductions in the MSE from a linear model regressed on all parameters. The lasso
 method gave us the best result, which may make sense for our data if regressing on the L-0 norm overfits and regressing on the L-2 norm underfits.
 One thing to note is that the violent crimes per population may depend on the interaction between the variables, rather than the variables themselves. All of

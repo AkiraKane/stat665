@@ -53,10 +53,28 @@ text, we would expect lower values of $k$ to perform better. However, overall, t
 
 \section{Exercise 3.3}
 
-Let $\hat{\theta} = CY$ be a different linear estimator of $\beta$ and let $C = (X'X)^{-1}X' + D$ where $D$ is a $k$ x $n$ nonzero matrix.
+		    
 \subsection{Part a}
 
+Please refer to Part b, which this justification will be based on. With $a'\beta$, we have a linear combination of $\beta$. And, just as in part b,
+in this case, the sum of the variances and covariances in the linear combination will give us the total variance. And since each $v_{i}$ and covariance in the linear combination
+	     is less than its counterparts in the linear combination for $\hat{\theta}$ (as the variance-covariance matrix exceeds the other variance-covariance
+	     matrix by a semidefinite matrix), then the $var(a'\beta) \leq var(a'\hat{\theta})$.
+	     Thus, the proof for part b will hold for
+part a.
+
 \subsection{Part b}
+As in the text, let $\hat{\theta} = CY$ be a different linear estimator of $\hat{\beta}$ and let $C = (X'X)^{-1}X' + D$ where $D$ is a $k$ x $n$ nonzero matrix.
+Then,
+\begin{align} V(\hat{\theta}) &= V(CY) = CV(Y)C' = \sigma^2CC' \\
+  &= \sigma^2((X'X)^{-1} + D)(X(X'X)^{-1} + D') \\
+    &= \sigma^2((X'X)^{-1}X'X(X'X)^{-1} + (X'X)^{-1}X'D' + DX(X'X)^{-1} + DD') \\
+    &= \sigma^2(X'X)^{-1} + \sigma^2(X'X)^{-1}(DX)' + \sigma^2DX(X'X)^{-1} + \sigma^2DD' \\
+    &= \sigma^2(X'X)^{-1} + \sigma^2DD' \\
+    &= V(\hat{\beta}) + \sigma^2DD'
+\end{align}
+
+Because $DD'$ is positive semidefinite, $$V(\hat{\theta}) \succeq V(\hat{\beta})$$
 
 
 \section{Appendix}

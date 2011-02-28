@@ -1,0 +1,46 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8x]{inputenc}
+
+%opening
+\title{Homework 3, STAT365/665}
+\author{Girish Sastry}
+
+\begin{document}
+
+\maketitle
+
+\section{Classification of Zipcode Data}
+
+We use k-NN with $k=1,7,15$. We carry out LDA using the built in package in R.
+For QDA, the process is a bit more complicated: because some of the covariance
+matrices are singular, we must do some sort of dimensionality reduction before
+running QDA. We use PCA to do this. Note that the prediction errors are 
+essentially the same in both the 50 and 100 component cases, so for computational
+efficiency we use the first 50 principal components. For logistic regression 
+we make use of the multinom package. For reduced rank LDA, we first project
+our data onto a subspace of dimension 10. Essentially, we define
+$\hat{Y} = X(X^TX)^{-1}X^TY = X\hat{B}$. Next we compute the eigen-decomposition
+of $\hat{Y}Y$ with PCA and we crossvalidate on the training set. PCA allows us
+to choose the number of components each iteration to measure the error. The 
+optimal number of components will minimize the error, and is the set of
+components that we will use for reduced rank LDA. The optimal number of
+components is 9 from crossvalidation. We obtain the following test and training
+errors for the various methods:
+
+\begin{tabular}{l*{6}{c}r}
+ Method		& Test Error & Training Error \\
+ \hline
+ 1-NN	& $2.47\%$ & $0.00\%$ \\
+ 7-NN 	& $3.02\%$ & $0.58\%$ \\
+ 15-NN	& $3.85\%$ & $0.93\%$ \\
+ LDA	& $6.38\%$ & $6.20\%$ \\
+ QDA	& $6.52\%$ & $1.77\%$ \\
+ Reduced Rank LDA	& $6.38\%$ & $6.20\%$ \\
+ Logistic Regression	& $9.49\%$ & $0.00\%$ \\
+\end{tabular}
+
+
+
+\section{Classification of Phoneme Data}
+
+\end{document}

@@ -131,7 +131,10 @@ When comparing QDA and logistic regression, it seems that logistic regression
 gives us better results. This is probably due to the nature of the data set:
 the data are quantitative values of sound, and so there is likely some kind
 of relationship between the data points, which QDA does not take into account.
-To find a better model for this data, we would need something that 
+To find a better model for this data, we would need something that
 takes this inter-correlation into account.
+
+\section{Appendix}
+This section contains the R code for the analysis.
 
 \end{document}

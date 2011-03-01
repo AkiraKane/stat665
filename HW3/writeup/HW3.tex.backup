@@ -39,8 +39,32 @@ errors for the various methods:
  Logistic Regression	& $9.49\%$ & $0.00\%$ \\
 \end{tabular}
 
+We see that in general, nearest neighbor methods once again perform better
+than the other methods. Just as was the case for linear regression, this is 
+probably due to the nature of the problem, and perhaps due to our error metric
+for cross validation. Zipcode classification is a discrete classification 
+problem and thus we use misclassification error instead of mean squared error
+(as in regression). Thus, we note that linear methods generally do not perform
+as well as nearest neighbors for the zipcode problem. Also, according to 
+\textit{The Elements of Statistical Learning} website, a 2.5\% test error 
+is ``excellent''. So the best method is probably much more complicated
+than linear models.
 
+Furthermore, there may be a Gaussian assumption in the linear methods used, 
+which could explain the worse results vs nearest neighbors. Looking at
+LDA vs Reduced Rank LDA, we see that there is no difference in training and
+test errors. We used 9 out of the 10 components for reduced rank LDA, so 
+it is likely that the unused component had such a small proportion of the 
+variance that it was negligible to the model.
+
+Next, note that QDA performs better than the linear methods, probably due to
+the Gaussian assumption mentioned earlier. QDA allows for variation within
+each class and thus is looser than the linear models. This seems more
+valid than a single variance across all classes.
 
 \section{Classification of Phoneme Data}
+
+\subsection{Raw and Regularized Logistic Regression}
+\subsection{Raw and Regularized QDA}
 
 \end{document}

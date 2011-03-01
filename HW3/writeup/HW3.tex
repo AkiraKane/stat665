@@ -64,4 +64,77 @@ valid than a single variance across all classes.
 
 \section{Classification of Phoneme Data}
 
+For both logistic regression and QDA, we choose to split the data in half.
+The first half is the training set and the second half is the test set. 
+Looking at a plot of the data, it seems that there is no significant 
+difference in the distribution of data in the test and training sets. 
+
+\subsection{Raw and Regularized Logistic Regression}
+
+First, we carry out raw and regularized logistic regression on a subset of
+the data. This subset corresponds to the ``aa'' and ``ao'' phonemes. 
+Regularized regression was done using 12 knots, as in \textit{The Elements
+of Statistical Learning}. The results are as follows:
+
+\begin{tabular}{l*{6}{c}r}
+  \hline
+ Method		& Test Error & Training Error \\
+ \hline
+ Raw Logistic Regression		& $24.71\%$ & $7.92\%$ \\
+ Regularized Logistic Regression 	& $18.97\%$ & $20.08\%$ \\
+ \hline
+\end{tabular}
+
+These results represent the same trend seen in \textit{The Elements of
+Statistical Learning}. Using a natural cubic spline fit causes our test error
+to decrease but also causes our training error to increase a lot. Just as
+in the text, smoothing the estimator probably causes this. The high error 
+rate is most likely due to the linear logistic regression model. Many of 
+the features are highly correlated and the model doesn't necessarily take
+this into account. When extending the analysis to the full data set, we
+obtain the following results:
+
+\begin{tabular}{l*{6}{c}r}
+  \hline
+ Method		& Test Error & Training Error \\
+ \hline
+ Raw Logistic Regression		& $15.04\%$ & $1.82\%$ \\
+ Regularized Logistic Regression 	& $14.62\%$ & $12.90\%$ \\
+ \hline
+\end{tabular}
+
+In both the raw and regularized cases, we notice a lower error rate than 
+in the subset of ``aa'' and ``ao'' phoneme data, probably because we
+simply have more data to train our model on. The raw logistic regression
+model is more accurate than the regularized logistic regression model.
+
+\subsection{Raw and Regularized QDA}
+
+Next, we run raw and regularized QDA on the phoneme data set, obtaining
+the following results:
+
+\begin{tabular}{l*{6}{c}r}
+  \hline
+ Method		& Test Error & Training Error \\
+ \hline
+ Raw QDA		& $29.02\%$ & $14.46\%$ \\
+ Regularized QDA	 & $17.66\%$ & $15.21\%$ \\
+ \hline
+\end{tabular}
+
+When regularizing QDA, we choose our knots to be of size 5, 6, 7, 8, and 9.
+Then we use 10-fold cross-validation and find that 8 knots is optimal. Thus,
+we train and test using 8 knots. We observe that our training error is a 
+little higher in the regularized model but our test error is lower: this,
+just as before, is likely due to the smoothing effect in the raw case.
+When comparing QDA and logistic regression, it seems that logistic regression
+gives us better results. This is probably due to the nature of the data set:
+the data are quantitative values of sound, and so there is likely some kind
+of relationship between the data points, which QDA does not take into account.
+To find a better model for this data, we would need something that 
+takes this inter-correlation into account.
+
+\section{Appendix}
+This section contains the R code for the analysis.
+
 \end{document}

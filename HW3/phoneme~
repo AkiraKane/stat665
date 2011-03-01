@@ -1,0 +1,22 @@
+# Phone Data Classification
+# Girish Sastry
+
+phoneme.data <- read.csv (file <- "/home/gyratortron/Desktop/cs-yale/stat665/HW3/phoneme.data", header<-TRUE, sep <- ",") 
+
+# Subset of data, as described in Elements of Statistical Learning: "aa" and "ao" only
+
+library (Design)
+library (nnet)
+
+phoneme.sub <- phoneme.data[which(phoneme.data[,258] == 'aa' | phoneme.data[,258] == 'ao'),]
+x.test.sub <- phoneme.sub[1:858,2:257]
+x.train.sub <- phoneme.sub[859:1717, 2:257]
+y.test.sub <- phoneme.sub[1:858, 258]
+y.train.sub <- phoneme.sub[859:1717, 258]
+raw.sub <- lrm(y.train.sub ~ ., data = x.train.sub)
+raw.sub.train <- predict.lrm(raw.sub, x.train.sub, type = "fitted.ind")
+raw.sub.test <- predict.lrm(raw.sub, x.test.sub, type = "fitted.ind")
+
+raw.sub2 <- multinom(y.train.sub ~., data = x.train.sub)
+raw.sub.train2 <- predict(raw.sub2, x.train.sub)
+raw.sub.test2 <- predict(raw.sub2, x.test.sub)

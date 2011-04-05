@@ -1,0 +1,18 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8x]{inputenc}
+
+%opening
+\title{Spam Filtering: An Analysis of the SpamBase Data Set}
+\author{Girish Sastry}
+
+\begin{document}
+
+\maketitle
+
+\section{SpamBase Data}
+
+The SpamBase dataset is a publicly available data set from the UCI machine learning
+repository. It was originally curated by Hewlett Packard Labs, and contains spam data
+from two months in the summer of 1999. The problem is a classification problem with 
+fifty five features.
+\end{document}

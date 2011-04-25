@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.4.5)  24 APR 2011 21:19
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.4.5)  25 APR 2011 15:55
 entering extended mode
  %&-line parsing enabled.
 **writeup.tex --shell-escape
@@ -179,13 +179,14 @@ File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 File: simulated_classes.png Graphic file (type png)
 
 <use simulated_classes.png> [2]
-<random_forest.png, id=15, 673.51625pt x 673.51625pt>
+<vs_blind.png, id=15, 673.51625pt x 673.51625pt>
+File: vs_blind.png Graphic file (type png)
+ <use vs_blind.png>
+<random_forest.png, id=16, 673.51625pt x 673.51625pt>
 File: random_forest.png Graphic file (type png)
  <use random_forest.png>
-<vs_blind.png, id=16, 673.51625pt x 673.51625pt>
-File: vs_blind.png Graphic file (type png)
- <use vs_blind.png> [3 <./simulated_classes.png> <./random_forest.png>] [4 <./v
-s_blind.png>] (./writeup.aux) ) 
+[3 <./simulated_classes.png> <./vs_blind.png>] [4 <./random_forest.png>]
+(./writeup.aux) ) 
 Here is how much of TeX's memory you used:
  1855 strings out of 495061
  24142 string characters out of 1182622
@@ -194,12 +195,12 @@ Here is how much of TeX's memory you used:
  10888 words of font info for 43 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
  27i,7n,22p,343b,197s stack positions out of 5000i,500n,10000p,200000b,50000s
-</usr/share/texmf-texlive/fonts/type1/public/ams
-fonts/cm/cmbx12.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cm
-mi10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr10.pfb></u
-sr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/tex
-mf-texlive/fonts/type1/public/amsfonts/cm/cmr17.pfb>
-Output written on writeup.pdf (4 pages, 140268 bytes).
+</usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx1
+2.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr
+/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf
+-texlive/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-texlive/fon
+ts/type1/public/amsfonts/cm/cmr17.pfb>
+Output written on writeup.pdf (4 pages, 140327 bytes).
 PDF statistics:
  42 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

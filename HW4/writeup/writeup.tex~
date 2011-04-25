@@ -103,9 +103,11 @@ This section contains the figures referenced in the writeup and the R code used 
 Figure 1: Simulated Data
 
 \includegraphics[width=100mm]{random_forest.png}
+
 Figure 2: Decision Tree Classification for Caravan Data
 
 
 \includegraphics[width=100mm]{vs_blind.png}
+
 Figure 3: Random Forest Classification for Caravan Data
 \end{document}

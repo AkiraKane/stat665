@@ -1,0 +1,36 @@
+\begin{thebibliography}{1}
+
+\bibitem{spam!}
+Lorrie~Faith Cranor and Brian~A. LaMacchia.
+\newblock Spam.
+\newblock {\em Communications of The ACM}, 41:74--83, 1998.
+
+\bibitem{fletcher}
+Tristan Fletcher.
+\newblock Support vector machines explained.
+
+\bibitem{hastie01statisticallearning}
+Trevor Hastie, Robert Tibshirani, and Jerome Friedman.
+\newblock {\em The Elements of Statistical Learning}.
+\newblock Springer Series in Statistics. Springer New York Inc., New York, NY,
+  USA, 2001.
+
+\bibitem{lisp}
+Ross Ihaka and Duncan~Temple Lang.
+\newblock Back to the future: Lisp as a base for a statistical computing
+  system.
+
+\bibitem{kearns}
+Michael Kearns.
+\newblock Thoughts on hypothesis boosting, 1998.
+
+\bibitem{Lotte_topicalreview}
+F~Lotte, M~Congedo, A~Lécuyer, and F~Lamarche.
+\newblock Topical review a review of classification algorithms for eeg-based
+  brain-computer interfaces.
+
+\bibitem{bayes}
+Wikipedia.
+\newblock Wikipedia article on naive bayes.
+
+\end{thebibliography}

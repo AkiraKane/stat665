@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99c (TeX Live 2009/Debian)
+The top-level auxiliary file: writeup.aux
+The style file: plain.bst
+Database file #1: references.bib
+Warning--empty journal in lisp
+Warning--empty year in lisp
+You've used 7 entries,
+            2118 wiz_defined-function locations,
+            527 strings with 4716 characters,
+and the built_in function-call counts, 1739 in all, are:
+= -- 154
+> -- 88
+< -- 0
++ -- 36
+- -- 28
+* -- 91
+:= -- 301
+add.period$ -- 17
+call.type$ -- 7
+change.case$ -- 34
+chr.to.int$ -- 0
+cite$ -- 9
+duplicate$ -- 61
+empty$ -- 152
+format.name$ -- 28
+if$ -- 358
+int.to.chr$ -- 0
+int.to.str$ -- 7
+missing$ -- 4
+newline$ -- 33
+num.names$ -- 14
+pop$ -- 55
+preamble$ -- 1
+purify$ -- 28
+quote$ -- 0
+skip$ -- 59
+stack$ -- 0
+substring$ -- 55
+swap$ -- 6
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 26
+warning$ -- 2
+while$ -- 16
+width$ -- 8
+write$ -- 61
+(There were 2 warnings)
